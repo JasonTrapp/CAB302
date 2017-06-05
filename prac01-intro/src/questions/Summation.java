@@ -7,8 +7,8 @@ package questions;
  * The program is meant to sum the natural numbers in a
  * fixed range
  * 
- * Author: Malcolm Corney
- * Version: 1.1
+ * Author: Jason Trapp
+ * Version: 1.2
  * 
  */
 
@@ -28,7 +28,7 @@ public class Summation {
 
 	/* Method to calculate the sum */
 	public void add() {
-		for (short index = START; index < END; index++) {
+		for (short index = START; index <= END; index++) {
 			total += index;
 		}
 	}
