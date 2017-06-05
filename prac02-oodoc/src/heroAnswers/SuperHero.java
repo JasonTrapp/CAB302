@@ -2,6 +2,11 @@ package heroAnswers;
 
 import heroQuestions.SuperPower;
 
+/**
+ * A superhero is a hero (with two identities) but may also have superpowers.
+ * @author Jason Trapp
+ *
+ */
 public abstract class SuperHero implements Hero{
 	protected String trueIdentity;
 	private String alterEgo;
