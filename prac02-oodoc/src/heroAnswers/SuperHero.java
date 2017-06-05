@@ -3,7 +3,10 @@ package heroAnswers;
 import heroQuestions.SuperPower;
 
 public abstract class SuperHero implements Hero{
-	public String trueIdentity, alterEgo, current;
+	protected String trueIdentity;
+	private String alterEgo;
+	protected String current;
+
 	/**
 	 * Returns the hero's current identity in a printable format.
 	 * @return The hero's current identity
@@ -39,6 +42,8 @@ public abstract class SuperHero implements Hero{
 	public abstract int totalPower();
 	
 	public SuperHero(String trueIdentity, String alterEgo){
-		
+		this.trueIdentity = trueIdentity;
+		this.alterEgo = alterEgo;
+		this.current = trueIdentity;
 	}
 }

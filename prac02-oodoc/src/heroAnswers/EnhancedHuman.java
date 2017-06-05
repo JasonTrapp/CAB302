@@ -4,33 +4,35 @@ import heroQuestions.SuperPower;
 
 public class EnhancedHuman extends SuperHero{
 	
-	public EnhancedHuman(String trueIdentity, String alterEgo) {
+	private SuperPower[] power;
+	
+	public EnhancedHuman(String trueIdentity, String alterEgo, SuperPower[] acquiredPowers) {
 		super(trueIdentity, alterEgo);
-	}
-
-	@Override
-	public boolean hasPower(SuperPower queriedPower) {
-		return false;
+		power = acquiredPowers;
 	}
 
 	@Override
 	public int totalPower() {
-		// TODO Auto-generated method stub
+		int powerCount = 0;
+		if(!super.current.equals(super.trueIdentity)){
+			for(SuperPower mypower : power)
+				powerCount += mypower.getValue();
+			return powerCount;
+		}
 		return 0;
 	}
 	
-	@Override
-	public String getIdentity() {
-		return null;
-	}
-	
 	public void switchIdentity(){
-		
+		super.switchIdentity();
 	}
 	
-	public boolean hasPower(){
-		
-		return true;
+	public boolean hasPower(SuperPower queriedPower){
+		if(!super.current.equals(super.trueIdentity))
+			for(int i = 0; i < power.length; i++){
+				if(power[i].equals(queriedPower))
+					return true;
+			}
+		return false;
 	}
 	
 }
