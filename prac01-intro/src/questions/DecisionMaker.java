@@ -1,6 +1,11 @@
 package questions;
 
-/* Template for the "Decision Maker" exercise */
+/**
+ * Determines if a team should accept a project depending on length and difficulty
+ * of project
+ * @author Jason Trapp
+ * @version 1.1
+ */
 
 
 public class DecisionMaker {
@@ -9,7 +14,16 @@ public class DecisionMaker {
 	 * the number of months required to complete the job and the
 	 * perceived level of difficulty, on a 1 to 10 scale
 	 */
-
+	public static String decision(int months, int scale){
+		//Short and Hard
+		if(months <= 3 && scale >= 7)
+			return "decline";
+		//Short and easy and long and hard
+		else if((months <= 3 && scale < 7) || (months > 3 && scale >= 7))
+			return "discuss";
+		else
+			return "accept";
+	}
 	
 	/* Main program that tests the "decision" function */
 	public static void main(String[] args) {
