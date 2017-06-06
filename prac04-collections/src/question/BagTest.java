@@ -27,19 +27,19 @@ public class BagTest {
 
 	@Before @Test /* Create two new bags */
 	public void setUp() {
-		stringBag = new YourBag<String>(); // <-- insert *your* bag type's name
-		intBag = new YourBag<Integer>(); // <-- insert *your* bag type's name
+		stringBag = new HashBag<String>(); // <-- insert *your* bag type's name
+		intBag = new HashBag<Integer>(); // <-- insert *your* bag type's name
 	}
 
 	@Test /* One bag, one kind of element */
-	public void singleElementType() {
+	public void singleElementType() throws BagException {
 		stringBag.add("c", 3);
 		stringBag.add("c", 6);
 		assertEquals(9, stringBag.quantity("c"));
 	}
 
 	@Test /* One bag, multiple kinds of element */
-	public void multipleElementTypes() {
+	public void multipleElementTypes() throws BagException {
 		stringBag.add("a", 5);
 		stringBag.add("b", 3);
 		stringBag.add("a", 6);
@@ -49,7 +49,7 @@ public class BagTest {
 	}
 
 	@Test /* Adding and then removing elements */
-	public void removingElements() {
+	public void removingElements() throws BagException {
 		stringBag.add("x", 17);
 		stringBag.add("y", 3);
 		stringBag.remove("x", 1);
@@ -59,7 +59,7 @@ public class BagTest {
 	}
 
 	@Test /* Multiple bags */
-	public void multipleBags() {
+	public void multipleBags() throws BagException {
 		intBag.add(86, 5);
 		stringBag.add("m", 12);
 		stringBag.remove("m", 3);
@@ -72,7 +72,7 @@ public class BagTest {
 	}
 
 	@Test /* Total size of a bag */
-	public void totalSizeEqualsSumOfQuantities() {
+	public void totalSizeEqualsSumOfQuantities() throws BagException {
 		stringBag.add("j", 33);
 		stringBag.add("k", 1);
 		stringBag.remove("j", 10);
@@ -84,7 +84,7 @@ public class BagTest {
 	}
 
 	@Test /* Removing all elements */
-	public void removeAll() {
+	public void removeAll() throws BagException {
 		stringBag.add("u", 6);
 		stringBag.add("v", 4);
 		stringBag.add("u", 2);
@@ -93,28 +93,28 @@ public class BagTest {
 	}
 
 	@Test /* Nonexistent elements */
-	public void nonexistent() {
+	public void nonexistent() throws BagException {
 		stringBag.add("f", 3);
 		stringBag.add("g", 2);
 		assertEquals(0, stringBag.quantity("h"));
 	}
 
 	@Test /* Adding nothing */
-	public void addNothing() {
+	public void addNothing() throws BagException {
 		stringBag.add("p", 5);
 		stringBag.add("p", 0);
 		assertEquals(5, stringBag.quantity("p"));
 	}
 	
 	@Test /* Removing nothing */
-	public void removeNothing() {
+	public void removeNothing() throws BagException {
 		stringBag.add("p", 5);
 		stringBag.remove("p", 0);
 		assertEquals(5, stringBag.quantity("p"));
 	}
 	
 	@Test /* Distinct elements in a bag */
-	public void distinctElements() {
+	public void distinctElements() throws BagException {
 		stringBag.add("t", 33);
 		stringBag.add("s", 4);
 		stringBag.add("t", 6);
@@ -124,7 +124,7 @@ public class BagTest {
 	}
 	
 	@Test /* Iterating over the elements in a bag */
-	public void elementIteration() {
+	public void elementIteration() throws BagException {
 		ArrayList<String> valuesProduced = new ArrayList<String>();
 		Object[] sortedValues;
 		stringBag.add("r", 1);
