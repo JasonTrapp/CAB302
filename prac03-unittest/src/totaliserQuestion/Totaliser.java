@@ -44,7 +44,7 @@ package totaliserQuestion;
  */
 public class Totaliser {
 
-	private static int total = 0;
+	private int total = 0;
 
 	/**
 	 * Reset the sum to zero.
@@ -69,7 +69,7 @@ public class Totaliser {
 	 * @param newValue the new value to be added to the sum
 	 */
 	public void enterValue(int newValue) {
-		total = newValue;
+		total += newValue;
 	}
 
 }
