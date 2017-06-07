@@ -25,6 +25,9 @@ public class MovieList {
 	}
 
 	public void setRating(String name, int i) throws MovieListException {
+		if(!movies.containsKey(name))
+			throw new MovieListException("Movie does not exist");
+		
 		if(i < 1)
 			throw new MovieListException("Must rate at least 1 star");
 		else if(i > 5)

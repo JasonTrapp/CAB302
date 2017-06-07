@@ -95,9 +95,9 @@ public class MovieListTest {
 	
 	/* Test 9: Can't rate an unknown movie
 	 */
-//	@Test(expected = MovieListException.class)
-//	public void ratingUnknownMovie() throws MovieListException {
-//		movies.setRating("Them!", 4);
-//	}
+	@Test(expected = MovieListException.class)
+	public void ratingUnknownMovie() throws MovieListException {
+		movies.setRating("Them!", 4);
+	}
 	
 }
