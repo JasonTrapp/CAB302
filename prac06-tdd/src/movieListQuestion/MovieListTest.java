@@ -50,17 +50,17 @@ public class MovieListTest {
 	
 	/* Test 4: Getting a printable list of movies
 	 */
-//	@Test public void listAlphabetically() throws MovieListException {
-//		String orderedListing =
-//				"Casablanca\n" +
-//				"Maltese Bippy, The\n" +
-//				"Star Wars\n";
-//		movies.addMovie("Star Wars");
-//		movies.addMovie("Casablanca");
-//		movies.addMovie("Maltese Bippy, The");
-//		assertEquals("Listing not alphabetical",
-//				orderedListing, movies.getList());
-//	}
+	@Test public void listAlphabetically() throws MovieListException {
+		String orderedListing =
+				"Casablanca\n" +
+				"Maltese Bippy, The\n" +
+				"Star Wars\n";
+		movies.addMovie("Star Wars");
+		movies.addMovie("Casablanca");
+		movies.addMovie("Maltese Bippy, The");
+		assertEquals("Listing not alphabetical",
+				orderedListing, movies.getList());
+	}
 	
 	/* Test 5: Can't get a rating for an unrated movie
 	 */

@@ -25,6 +25,13 @@ public class MovieList {
 		movies.put(name, toEnter);
 	}
 
+	public String getList() {
+		String list = "";
+		for(Map.Entry<String, String> entry : movies.entrySet())
+			list += entry.getKey() + "\n";
+		return list;
+	}
+
 	
 	
 }
