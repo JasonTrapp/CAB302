@@ -10,8 +10,11 @@ public class MovieList {
 		 movies = new TreeMap<String, String>();
 	}
 
-	public void addMovie(String name) {
-		movies.put(name, "No rating");
+	public void addMovie(String name) throws MovieListException {
+		if(!movies.containsKey(name))
+			movies.put(name, "No rating");
+		else
+			throw new MovieListException("Cannot add a duplicate movie");
 	}
 
 	public Object getRating(String name) throws MovieListException {

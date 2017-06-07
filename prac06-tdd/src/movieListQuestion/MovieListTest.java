@@ -71,11 +71,11 @@ public class MovieListTest {
 	
 	/* Test 6: Can't add the same movie twice
 	 */
-//	@Test(expected = MovieListException.class)
-//	public void duplicateMovie() throws MovieListException {
-//		movies.addMovie("Earth Versus the Flying Saucers");
-//		movies.addMovie("Earth Versus the Flying Saucers");
-//	}
+	@Test(expected = MovieListException.class)
+	public void duplicateMovie() throws MovieListException {
+		movies.addMovie("Earth Versus the Flying Saucers");
+		movies.addMovie("Earth Versus the Flying Saucers");
+	}
 	
 	/* Test 7: Even a bomb gets a single star
 	 */
