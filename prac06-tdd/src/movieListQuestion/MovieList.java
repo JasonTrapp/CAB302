@@ -24,7 +24,9 @@ public class MovieList {
 			throw new MovieListException("Movie does not exist");
 	}
 
-	public void setRating(String name, int i) {
+	public void setRating(String name, int i) throws MovieListException {
+		if(i < 1)
+			throw new MovieListException("Must rate at least 1 star");
 		String toEnter = "";
 		for(int j = 0; j < i; j++)
 			toEnter += "*";

@@ -79,11 +79,11 @@ public class MovieListTest {
 	
 	/* Test 7: Even a bomb gets a single star
 	 */
-//	@Test(expected = MovieListException.class)
-//	public void ratingTooLow() throws MovieListException {
-//		movies.addMovie("Plan Nine From Outer Space");
-//		movies.setRating("Plan Nine From Outer Space", 0);
-//	}
+	@Test(expected = MovieListException.class)
+	public void ratingTooLow() throws MovieListException {
+		movies.addMovie("Plan Nine From Outer Space");
+		movies.setRating("Plan Nine From Outer Space", 0);
+	}
 	
 	/* Test 8: No movie gets more than five stars
 	 */
