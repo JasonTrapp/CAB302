@@ -1,7 +1,7 @@
 
 package patterns.mystery; 
 
-import patterns.mystery.Mystery;
+import patterns.mystery.Singleton;
 
 
 public class MysteryTest {
@@ -10,9 +10,9 @@ public class MysteryTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Mystery m1 = Mystery.getInstance(); 
+		Singleton m1 = Singleton.getInstance(); 
 		m1.HereIAm();
-		Mystery m2 = Mystery.getInstance();
+		Singleton m2 = Singleton.getInstance();
 		m2.HereIAm();
 	}
 

@@ -1,16 +1,16 @@
 package patterns.mystery;
 
-public class Mystery {
+public class Singleton {
 	private String name; 
-	protected Mystery (String s) {
+	Singleton (String s) {
 		this.name=s; 
 	}
 	 
 	private static class MysteryHolder { 
-	   private final static Mystery INSTANCE = new Mystery("MysteryHolder Call");
+	   private final static Singleton INSTANCE = new Singleton("MysteryHolder Call");
 	}
 	
-	public static Mystery getInstance() {
+	public static Singleton getInstance() {
 	   return MysteryHolder.INSTANCE;
 	}
 	
