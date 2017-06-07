@@ -7,7 +7,7 @@ public class MovieList {
 	private Map<String, String> movies;
 	
 	public MovieList(){
-		 new TreeMap<String, String>();
+		 movies = new TreeMap<String, String>();
 	}
 
 	
