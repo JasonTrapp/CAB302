@@ -14,8 +14,11 @@ public class MovieList {
 		movies.put(name, "No rating");
 	}
 
-	public Object getRating(String name) {
-		return movies.get(name);
+	public Object getRating(String name) throws MovieListException {
+		if(movies.containsKey(name))
+			return movies.get(name);
+		else 
+			throw new MovieListException("Movie does not exist");
 	}
 
 	public void setRating(String name, int i) {

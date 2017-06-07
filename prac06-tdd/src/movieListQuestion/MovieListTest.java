@@ -64,10 +64,10 @@ public class MovieListTest {
 	
 	/* Test 5: Can't get a rating for an unrated movie
 	 */
-//	@Test(expected = MovieListException.class)
-//	public void nonexistentRating() throws MovieListException {
-//		movies.getRating("The Ghost in the Invisible Bikini");
-//	}
+	@Test(expected = MovieListException.class)
+	public void nonexistentRating() throws MovieListException {
+		movies.getRating("The Ghost in the Invisible Bikini");
+	}
 	
 	/* Test 6: Can't add the same movie twice
 	 */
