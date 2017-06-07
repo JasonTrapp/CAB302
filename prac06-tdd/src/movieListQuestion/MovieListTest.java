@@ -22,14 +22,14 @@ public class MovieListTest {
 
 	/* Test 0: Declaring MovieList objects
 	 */
-//	MovieList movies;
+	MovieList movies;
 	
 
 	/* Test 1: Constructing a MovieList object
 	 */
-//	@Before @Test public void setUpMovieList() {
-//		movies = new MovieList();
-//	}
+	@Before @Test public void setUpMovieList() {
+		movies = new MovieList();
+	}
 	
 	/* Test 2: Adding a new movie to the list
 	 */
