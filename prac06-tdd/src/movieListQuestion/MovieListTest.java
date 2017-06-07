@@ -41,12 +41,12 @@ public class MovieListTest {
 	
 	/* Test 3: Associating a rating with a movie
 	 */
-//	@Test public void addARating() throws MovieListException {
-//		movies.addMovie("Goldfinger");
-//		movies.setRating("Goldfinger", 4);
-//		assertEquals("Couldn't add a rating",
-//				"****", movies.getRating("Goldfinger"));
-//	}
+	@Test public void addARating() throws MovieListException {
+		movies.addMovie("Goldfinger");
+		movies.setRating("Goldfinger", 4);
+		assertEquals("Couldn't add a rating",
+				"****", movies.getRating("Goldfinger"));
+	}
 	
 	/* Test 4: Getting a printable list of movies
 	 */

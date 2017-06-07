@@ -14,8 +14,15 @@ public class MovieList {
 		movies.put(name, "No rating");
 	}
 
-	public Object getRating(String string) {
-		return movies.get(string);
+	public Object getRating(String name) {
+		return movies.get(name);
+	}
+
+	public void setRating(String name, int i) {
+		String toEnter = "";
+		for(int j = 0; j < i; j++)
+			toEnter += "*";
+		movies.put(name, toEnter);
 	}
 
 	
