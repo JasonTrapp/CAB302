@@ -87,11 +87,11 @@ public class MovieListTest {
 	
 	/* Test 8: No movie gets more than five stars
 	 */
-//	@Test(expected = MovieListException.class)
-//	public void ratingTooHigh() throws MovieListException {
-//		movies.addMovie("Citizen Kane");
-//		movies.setRating("Citizen Kane", 6);
-//	}
+	@Test(expected = MovieListException.class)
+	public void ratingTooHigh() throws MovieListException {
+		movies.addMovie("Citizen Kane");
+		movies.setRating("Citizen Kane", 6);
+	}
 	
 	/* Test 9: Can't rate an unknown movie
 	 */

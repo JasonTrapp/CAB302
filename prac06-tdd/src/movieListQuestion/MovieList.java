@@ -27,10 +27,14 @@ public class MovieList {
 	public void setRating(String name, int i) throws MovieListException {
 		if(i < 1)
 			throw new MovieListException("Must rate at least 1 star");
-		String toEnter = "";
-		for(int j = 0; j < i; j++)
-			toEnter += "*";
-		movies.put(name, toEnter);
+		else if(i > 5)
+			throw new MovieListException("Must rate less than or equal to 5 stars");
+		else{
+			String toEnter = "";
+			for(int j = 0; j < i; j++)
+				toEnter += "*";
+			movies.put(name, toEnter);
+		}
 	}
 
 	public String getList() {
