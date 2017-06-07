@@ -5,6 +5,7 @@ package applications.temperature;
 
 import java.util.Random;
 
+
 /**
  * Main class for the temperature application 
  * @author hogan
@@ -21,8 +22,8 @@ public class Temperature {
 		TempMonitor wolfNews = new TempMonitor("Wolf News");
 		
 		// Observers 
-		ts.attachObserver(bureauNews);
-		ts.attachObserver(wolfNews); 
+		ts.addObserver(bureauNews);
+		ts.addObserver(wolfNews); 
 		
 		Random rng = new Random(); 
 		
@@ -43,6 +44,9 @@ public class Temperature {
 			TempMonitor bureauNews, TempMonitor wolfNews) {
 		ts.setState();
 		ts.notifyObservers();
+		Object e = null;
+		bureauNews.update(ts, e);
+		wolfNews.update(ts, e);
 		System.out.println(bureauNews.generateReport());
 		System.out.println(wolfNews.generateReport());
 		System.out.println();

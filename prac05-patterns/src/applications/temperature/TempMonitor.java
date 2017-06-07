@@ -2,9 +2,9 @@ package applications.temperature;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Observable;
+import java.util.Observer;
 
-import patterns.observer.Observer;
-import patterns.observer.Subject;
 
 public class TempMonitor implements Observer {
 	public static final String DATE_FORMAT_NOW = "yyyy-MM-dd HH:mm:ss";
@@ -14,10 +14,11 @@ public class TempMonitor implements Observer {
 	
 	public TempMonitor(String sn) {
 		serviceName = sn;
+		observedTemp = "";
 	}
-
+	
 	@Override
-	public void update(Subject s) {
+	public void update(Observable s, Object arg) {
 		observedTemp = ((TempSensor) s).getState(); 
 	}
 	
@@ -32,5 +33,4 @@ public class TempMonitor implements Observer {
 		SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT_NOW);
 		return sdf.format(cal.getTime());
     }
-
 }

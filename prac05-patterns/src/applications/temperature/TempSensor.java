@@ -1,15 +1,14 @@
 package applications.temperature;
 
 import java.util.Random;
-
-import patterns.observer.Subject;
+import java.util.Observable;
 
 /**
  * The Concrete Subject class for the Observer Pattern example 
  * @author Richard Thomas
  *
  */
-public class TempSensor extends Subject {
+public class TempSensor extends Observable {
 	private double temp; 
 	private double low; 
 	private double high;
