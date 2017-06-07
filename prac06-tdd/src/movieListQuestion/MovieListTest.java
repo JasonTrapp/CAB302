@@ -33,11 +33,11 @@ public class MovieListTest {
 	
 	/* Test 2: Adding a new movie to the list
 	 */
-//	@Test public void addAMovie() throws MovieListException {
-//		movies.addMovie("Star Wars");
-//		assertEquals("Adding movie failed",
-//				"No rating", movies.getRating("Star Wars"));
-//	}
+	@Test public void addAMovie() throws MovieListException {
+		movies.addMovie("Star Wars");
+		assertEquals("Adding movie failed",
+				"No rating", movies.getRating("Star Wars"));
+	}
 	
 	/* Test 3: Associating a rating with a movie
 	 */

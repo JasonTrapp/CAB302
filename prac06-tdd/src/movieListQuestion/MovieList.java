@@ -10,6 +10,14 @@ public class MovieList {
 		 movies = new TreeMap<String, String>();
 	}
 
+	public void addMovie(String name) {
+		movies.put(name, "No rating");
+	}
+
+	public Object getRating(String string) {
+		return movies.get(string);
+	}
+
 	
 	
 }
